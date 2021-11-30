@@ -1,0 +1,33 @@
+DATADIR = /scratch/sylju
+HOMEDIR = $(HOME)
+INCDIR = -I$(DATADIR)/include -I$(HOMEDIR)/include -I/usr/include 
+LIBDIR = -L$(DATADIR)/lib     -L$(HOMEDIR)/lib     -L/usr/lib
+#LIBS   = -lfftw3 -lm -lrand -lstdc++ -lrecipes_cpp -lgsl -lgslcblas 
+#LIBS   = -lfftw3 -lm -lrand -lstdc++ -lrecipes_cpp -lhypergeometric -lgfortran
+LIBS   = -lfftw3 -lm -lrand -lstdc++ 
+BINDIR = $(DATADIR)/bin
+EXTENSION = _x64.x
+
+# C++ compiler
+CCC= g++
+#CCC= pgCC
+STDOPTS= -std=c++11 -O3 -Wall
+CCOPTS=  $(STDOPTS) -DNDEBUG
+#CCOPTS=  $(STDOPTS)
+#CCOPTS= -O0 -g 
+#CCOPTS= -O3 -g
+#CCOPTS= -O -g
+#CCOPTS= -O3 -DNDEBUG -mcpu=pentium -funroll-loops -felide-constructors -pg
+#CCOPTS= -O3 -mcpu=pentium -funroll-loops -felide-constructors 
+#CCOPTS= -O3 -DNDEBUG -Wno-deprecated
+#CCOPTS= -O3 -pg -DNDEBUG
+#LINKOPTS = -O3 -static
+LINKOPTS =  -O3 
+#LINKOPTS =  -O0 -g
+CCFLAGS = $(CCOPTS) $(INCDIR) 
+
+
+
+
+
+
