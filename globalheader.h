@@ -111,11 +111,14 @@ Coord& operator-=(Coord& l,const Coord& r){
 }
 
 
+double l2(const Coord& a)
+{
+  return a.x()*a.x()+a.y()*a.y()+a.z()*a.z();
+}
 
 double scalarproduct(const Coord& l,const Coord& r){
   return double(l.x()*r.x()+l.y()*r.y()+l.z()*r.z());
 }
-
 
 
 Coord crossproduct(const Coord& a,const Coord& b)

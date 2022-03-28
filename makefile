@@ -16,6 +16,9 @@ DIAMONDSOURCES =  dia.C dia.h globalheader.h RunParameter.h
 dia.o : $(DIAMONDSOURCES)
 	$(CCC) $(CCFLAGS) -c -o $@ $<	
 
+dia_shell.o : $(DIAMONDSOURCES) 
+	$(CCC) -DBZSHELL $(CCFLAGS) -c -o $@ $<	
+
 
 
 spotless:	
